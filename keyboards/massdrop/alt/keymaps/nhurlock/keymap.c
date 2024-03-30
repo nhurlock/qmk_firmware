@@ -352,6 +352,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LT(SPECIALS, KC_RGUI):
+            return TAPPING_TERM - 75;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 led_instruction_t led_instructions[] = {
     // LEDs are normally inactive
     //
