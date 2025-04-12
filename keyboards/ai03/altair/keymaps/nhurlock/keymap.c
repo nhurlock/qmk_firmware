@@ -22,33 +22,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├──────┼───┼───┼──────┼──────┼───────────────────┼────────────┤   ├─────────────┼─────┼──────┼────────┼───┼───┼───────────────────┤
 //    │ lsft │ z │ x │  c   │  v   │         b         │ MO(MEDIA)  │   │ MO(CONTROL) │  n  │  m   │   ,    │ . │ / │ MT(MOD_RSFT, ent) │
 //    └──────┴───┴───┼──────┼──────┼───────────────────┼────────────┤   ├─────────────┼─────┼──────┼────────┼───┴───┴───────────────────┘
-//                   │ lalt │ lctl │ LT(SPECIALS, spc) │ MO(NUMPAD) │   │    rgui     │ spc │ bspc │ MO(FN) │
+//                   │ lalt │ lctl │ LT(SPECIALS, spc) │ MO(NUMPAD) │   │    bspc     │ spc │ rgui │ MO(FN) │
 //                   └──────┴──────┴───────────────────┴────────────┘   └─────────────┴─────┴──────┴────────┘
 [DEFAULT] = LAYOUT(
   KC_GRV  , KC_1 , KC_2 , KC_3    , KC_4    , KC_5                 , KC_MINS    ,     KC_EQL      , KC_6     , KC_7    , KC_8    , KC_9   , KC_0    , KC_BSPC             ,
   KC_TAB  , KC_Q , KC_W , KC_E    , KC_R    , KC_T                 , KC_LBRC    ,     KC_RBRC     , KC_Y     , KC_U    , KC_I    , KC_O   , KC_P    , KC_BSLS             ,
   KC_ESC  , KC_A , KC_S , KC_D    , KC_F    , KC_G                 , KC_LPRN    ,     KC_RPRN     , KC_H     , KC_J    , KC_K    , KC_L   , KC_SCLN , KC_QUOT             ,
   KC_LSFT , KC_Z , KC_X , KC_C    , KC_V    , KC_B                 , MO(MEDIA)  ,     MO(CONTROL) , KC_N     , KC_M    , KC_COMM , KC_DOT , KC_SLSH , MT(MOD_RSFT, KC_ENT),
-                          KC_LALT , KC_LCTL , LT(SPECIALS, KC_SPC) , MO(NUMPAD) ,     KC_RGUI     , KC_SPACE , KC_BSPC , MO(FN)
+                          KC_LALT , KC_LCTL , LT(SPECIALS, KC_SPC) , MO(NUMPAD) ,     KC_BSPC     , KC_SPACE , KC_RGUI , MO(FN)
 ),
 
-//    ┌────────────┬─────────┬─────────┬────────────┬────────────┬───────────┬─────────┐   ┌────────────┬─────┬───┬──────┬──────┬──────┬─────────┐
-//    │  LGUI(`)   │ LGUI(1) │ LGUI(2) │  LGUI(3)   │  LGUI(4)   │  LGUI(5)  │ LGUI(-) │   │  LGUI(=)   │     │ = │ kp_/ │ kp_* │      │         │
-//    ├────────────┼─────────┼─────────┼────────────┼────────────┼───────────┼─────────┤   ├────────────┼─────┼───┼──────┼──────┼──────┼─────────┤
-//    │ LGUI(tab)  │ LGUI(q) │ LGUI(w) │  LGUI(e)   │  LGUI(r)   │  LGUI(t)  │ LGUI([) │   │  LGUI(])   │     │ 7 │  8   │  9   │ kp_- │ LGUI(\) │
-//    ├────────────┼─────────┼─────────┼────────────┼────────────┼───────────┼─────────┤   ├────────────┼─────┼───┼──────┼──────┼──────┼─────────┤
-//    │ LGUI(esc)  │ LGUI(a) │ LGUI(s) │  LGUI(d)   │  LGUI(f)   │  LGUI(g)  │ LGUI(() │   │  LGUI())   │  %  │ 4 │  5   │  6   │ kp_+ │ LGUI(') │
-//    ├────────────┼─────────┼─────────┼────────────┼────────────┼───────────┼─────────┤   ├────────────┼─────┼───┼──────┼──────┼──────┼─────────┤
-//    │ LGUI(lsft) │ LGUI(z) │ LGUI(x) │  LGUI(c)   │  LGUI(v)   │  LGUI(b)  │         │   │            │  ,  │ 1 │  2   │  3   │      │         │
-//    └────────────┴─────────┴─────────┼────────────┼────────────┼───────────┼─────────┤   ├────────────┼─────┼───┼──────┼──────┴──────┴─────────┘
-//                                     │ LGUI(lalt) │ LGUI(lctl) │ LGUI(spc) │         │   │ LGUI(rgui) │     │ 0 │  .   │
-//                                     └────────────┴────────────┴───────────┴─────────┘   └────────────┴─────┴───┴──────┘
+//    ┌────────────┬─────────┬─────────┬────────────┬────────────┬───────────┬─────────┐   ┌─────────┬─────┬───┬──────┬──────┬──────┬─────────┐
+//    │  LGUI(`)   │ LGUI(1) │ LGUI(2) │  LGUI(3)   │  LGUI(4)   │  LGUI(5)  │ LGUI(-) │   │ LGUI(=) │     │ = │ kp_/ │ kp_* │      │         │
+//    ├────────────┼─────────┼─────────┼────────────┼────────────┼───────────┼─────────┤   ├─────────┼─────┼───┼──────┼──────┼──────┼─────────┤
+//    │ LGUI(tab)  │ LGUI(q) │ LGUI(w) │  LGUI(e)   │  LGUI(r)   │  LGUI(t)  │ LGUI([) │   │ LGUI(]) │     │ 7 │  8   │  9   │ kp_- │ LGUI(\) │
+//    ├────────────┼─────────┼─────────┼────────────┼────────────┼───────────┼─────────┤   ├─────────┼─────┼───┼──────┼──────┼──────┼─────────┤
+//    │ LGUI(esc)  │ LGUI(a) │ LGUI(s) │  LGUI(d)   │  LGUI(f)   │  LGUI(g)  │ LGUI(() │   │ LGUI()) │  %  │ 4 │  5   │  6   │ kp_+ │ LGUI(') │
+//    ├────────────┼─────────┼─────────┼────────────┼────────────┼───────────┼─────────┤   ├─────────┼─────┼───┼──────┼──────┼──────┼─────────┤
+//    │ LGUI(lsft) │ LGUI(z) │ LGUI(x) │  LGUI(c)   │  LGUI(v)   │  LGUI(b)  │         │   │         │  ,  │ 1 │  2   │  3   │      │         │
+//    └────────────┴─────────┴─────────┼────────────┼────────────┼───────────┼─────────┤   ├─────────┼─────┼───┼──────┼──────┴──────┴─────────┘
+//                                     │ LGUI(lalt) │ LGUI(lctl) │ LGUI(spc) │         │   │         │     │ 0 │  .   │
+//                                     └────────────┴────────────┴───────────┴─────────┘   └─────────┴─────┴───┴──────┘
 [NUMPAD] = LAYOUT(
   LGUI(KC_GRV)  , LGUI(KC_1) , LGUI(KC_2) , LGUI(KC_3)    , LGUI(KC_4)    , LGUI(KC_5)   , LGUI(KC_MINS) ,     LGUI(KC_EQL)  , _______    , KC_EQUAL , KC_KP_SLASH , KC_KP_ASTERISK , _______     , _______      ,
   LGUI(KC_TAB)  , LGUI(KC_Q) , LGUI(KC_W) , LGUI(KC_E)    , LGUI(KC_R)    , LGUI(KC_T)   , LGUI(KC_LBRC) ,     LGUI(KC_RBRC) , _______    , KC_7     , KC_8        , KC_9           , KC_KP_MINUS , LGUI(KC_BSLS),
   LGUI(KC_ESC)  , LGUI(KC_A) , LGUI(KC_S) , LGUI(KC_D)    , LGUI(KC_F)    , LGUI(KC_G)   , LGUI(KC_LPRN) ,     LGUI(KC_RPRN) , KC_PERCENT , KC_4     , KC_5        , KC_6           , KC_KP_PLUS  , LGUI(KC_QUOT),
   LGUI(KC_LSFT) , LGUI(KC_Z) , LGUI(KC_X) , LGUI(KC_C)    , LGUI(KC_V)    , LGUI(KC_B)   , _______       ,     _______       , KC_COMM    , KC_1     , KC_2        , KC_3           , _______     , _______      ,
-                                            LGUI(KC_LALT) , LGUI(KC_LCTL) , LGUI(KC_SPC) , _______       ,     LGUI(KC_RGUI) , _______    , KC_0     , KC_DOT
+                                            LGUI(KC_LALT) , LGUI(KC_LCTL) , LGUI(KC_SPC) , _______       ,     _______       , _______    , KC_0     , KC_DOT
 ),
 
 //    ┌─────────┬─────┬──────┬──────┬─────┬─────┬──────┐   ┌─────┬──────┬──────┬─────┬──────┬─────┬─────┐
