@@ -12,24 +12,33 @@
 #define MEDIA 4
 #define CONTROL 5
 
+const uint16_t PROGMEM tab_combo[] = {KC_J, KC_K, KC_L, COMBO_END};
+const uint16_t PROGMEM bspc_combo[] = {KC_M, KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM lalt_combo[] = {KC_S, KC_D, KC_F, COMBO_END};
+combo_t key_combos[] = {
+    COMBO(tab_combo, KC_TAB),
+    COMBO(bspc_combo, KC_BSPC),
+    COMBO(lalt_combo, KC_LALT),
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//    ┌──────┬───┬───┬─────────────┬─────────────┬───────────────────┬────────────┐   ┌─────────────┬─────┬─────────────┬────────┬───┬───┬──────┐
-//    │  `   │ 1 │ 2 │      3      │      4      │         5         │     -      │   │      =      │  6  │      7      │   8    │ 9 │ 0 │ bspc │
-//    ├──────┼───┼───┼─────────────┼─────────────┼───────────────────┼────────────┤   ├─────────────┼─────┼─────────────┼────────┼───┼───┼──────┤
-//    │ tab  │ q │ w │      e      │      r      │         t         │     [      │   │      ]      │  y  │      u      │   i    │ o │ p │  \   │
-//    ├──────┼───┼───┼─────────────┼─────────────┼───────────────────┼────────────┤   ├─────────────┼─────┼─────────────┼────────┼───┼───┼──────┤
-//    │ esc  │ a │ s │      d      │      f      │         g         │     (      │   │      )      │  h  │      j      │   k    │ l │ ; │  '   │
-//    ├──────┼───┼───┼─────────────┼─────────────┼───────────────────┼────────────┤   ├─────────────┼─────┼─────────────┼────────┼───┼───┼──────┤
-//    │ lalt │ z │ x │      c      │      v      │         b         │ MO(MEDIA)  │   │ MO(CONTROL) │  n  │      m      │   ,    │ . │ / │ rsft │
-//    └──────┴───┴───┼─────────────┼─────────────┼───────────────────┼────────────┤   ├─────────────┼─────┼─────────────┼────────┼───┴───┴──────┘
-//                   │ LCTL_T(tab) │ LSFT_T(esc) │ LT(SPECIALS, spc) │ MO(NUMPAD) │   │    bspc     │ spc │ RGUI_T(ent) │ MO(FN) │
-//                   └─────────────┴─────────────┴───────────────────┴────────────┘   └─────────────┴─────┴─────────────┴────────┘
+//    ┌──────┬───┬───┬─────────────┬─────────────┬───────────────────┬────────────┐   ┌──────────────┬─────┬─────────────┬────────┬───┬───┬──────┐
+//    │  `   │ 1 │ 2 │      3      │      4      │         5         │     -      │   │      =       │  6  │      7      │   8    │ 9 │ 0 │ bspc │
+//    ├──────┼───┼───┼─────────────┼─────────────┼───────────────────┼────────────┤   ├──────────────┼─────┼─────────────┼────────┼───┼───┼──────┤
+//    │ tab  │ q │ w │      e      │      r      │         t         │     [      │   │      ]       │  y  │      u      │   i    │ o │ p │  \   │
+//    ├──────┼───┼───┼─────────────┼─────────────┼───────────────────┼────────────┤   ├──────────────┼─────┼─────────────┼────────┼───┼───┼──────┤
+//    │ esc  │ a │ s │      d      │      f      │         g         │     (      │   │      )       │  h  │      j      │   k    │ l │ ; │  '   │
+//    ├──────┼───┼───┼─────────────┼─────────────┼───────────────────┼────────────┤   ├──────────────┼─────┼─────────────┼────────┼───┼───┼──────┤
+//    │ lalt │ z │ x │      c      │      v      │         b         │ MO(MEDIA)  │   │ MO(CONTROL)  │  n  │      m      │   ,    │ . │ / │ ralt │
+//    └──────┴───┴───┼─────────────┼─────────────┼───────────────────┼────────────┤   ├──────────────┼─────┼─────────────┼────────┼───┴───┴──────┘
+//                   │ LCTL_T(tab) │ LSFT_T(esc) │ LT(SPECIALS, spc) │ MO(NUMPAD) │   │ RGUI_T(bspc) │ spc │ RSFT_T(ent) │ MO(FN) │
+//                   └─────────────┴─────────────┴───────────────────┴────────────┘   └──────────────┴─────┴─────────────┴────────┘
 [DEFAULT] = LAYOUT(
-  KC_GRV  , KC_1 , KC_2 , KC_3           , KC_4           , KC_5                 , KC_MINS    ,     KC_EQL      , KC_6     , KC_7           , KC_8    , KC_9   , KC_0    , KC_BSPC,
-  KC_TAB  , KC_Q , KC_W , KC_E           , KC_R           , KC_T                 , KC_LBRC    ,     KC_RBRC     , KC_Y     , KC_U           , KC_I    , KC_O   , KC_P    , KC_BSLS,
-  KC_ESC  , KC_A , KC_S , KC_D           , KC_F           , KC_G                 , KC_LPRN    ,     KC_RPRN     , KC_H     , KC_J           , KC_K    , KC_L   , KC_SCLN , KC_QUOT,
-  KC_LALT , KC_Z , KC_X , KC_C           , KC_V           , KC_B                 , MO(MEDIA)  ,     MO(CONTROL) , KC_N     , KC_M           , KC_COMM , KC_DOT , KC_SLSH , KC_RSFT,
-                          LCTL_T(KC_TAB) , LSFT_T(KC_ESC) , LT(SPECIALS, KC_SPC) , MO(NUMPAD) ,     KC_BSPC     , KC_SPACE , RGUI_T(KC_ENT) , MO(FN)
+  KC_GRV  , KC_1 , KC_2 , KC_3           , KC_4           , KC_5                 , KC_MINS    ,     KC_EQL          , KC_6   , KC_7           , KC_8    , KC_9   , KC_0    , KC_BSPC,
+  KC_TAB  , KC_Q , KC_W , KC_E           , KC_R           , KC_T                 , KC_LBRC    ,     KC_RBRC         , KC_Y   , KC_U           , KC_I    , KC_O   , KC_P    , KC_BSLS,
+  KC_ESC  , KC_A , KC_S , KC_D           , KC_F           , KC_G                 , KC_LPRN    ,     KC_RPRN         , KC_H   , KC_J           , KC_K    , KC_L   , KC_SCLN , KC_QUOT,
+  KC_LALT , KC_Z , KC_X , KC_C           , KC_V           , KC_B                 , MO(MEDIA)  ,     MO(CONTROL)     , KC_N   , KC_M           , KC_COMM , KC_DOT , KC_SLSH , KC_RALT,
+                          LCTL_T(KC_TAB) , LSFT_T(KC_ESC) , LT(SPECIALS, KC_SPC) , MO(NUMPAD) ,     RGUI_T(KC_BSPC) , KC_SPC , RSFT_T(KC_ENT) , MO(FN)
 ),
 
 //    ┌────────────┬─────────┬─────────┬────────────┬────────────┬───────────┬───────────┐   ┌─────────┬─────┬───┬──────┬──────┬──────┬────────────┐
@@ -75,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┼─────┤
 //    │     │  !  │  @  │  #  │  $  │  -  │     │   │     │  +  │  =  │  *  │  _  │  "  │     │
 //    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-//    │     │     │  [  │  (  │  {  │  |  │     │   │     │  &  │  }  │  )  │  ]  │  '  │     │
+//    │     │  ~  │  [  │  (  │  {  │  |  │     │   │     │  &  │  }  │  )  │  ]  │  '  │     │
 //    ├─────┼─────┼─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┼─────┼─────┤
 //    │     │     │  `  │  \  │  <  │  %  │     │   │     │  ^  │  >  │  /  │  .  │  `  │     │
 //    └─────┴─────┴─────┼─────┼─────┼─────┼─────┤   ├─────┼─────┼─────┼─────┼─────┴─────┴─────┘
@@ -84,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [SPECIALS] = LAYOUT(
   _______ , _______ , _______ , _______ , _______   , _______  , _______ ,     _______ , _______ , _______  , _______ , _______ , _______ , _______,
   _______ , KC_EXLM , KC_AT   , KC_HASH , KC_DOLLAR , KC_MINUS , _______ ,     _______ , KC_PLUS , KC_EQUAL , KC_ASTR , KC_UNDS , KC_DQT  , _______,
-  _______ , _______ , KC_LBRC , KC_LPRN , KC_LCBR   , KC_PIPE  , _______ ,     _______ , KC_AMPR , KC_RCBR  , KC_RPRN , KC_RBRC , KC_QUOT , _______,
+  _______ , KC_TILD , KC_LBRC , KC_LPRN , KC_LCBR   , KC_PIPE  , _______ ,     _______ , KC_AMPR , KC_RCBR  , KC_RPRN , KC_RBRC , KC_QUOT , _______,
   _______ , _______ , KC_GRV  , KC_BSLS , KC_LT     , KC_PERC  , _______ ,     _______ , KC_CIRC , KC_GT    , KC_SLSH , KC_DOT  , KC_GRV  , _______,
                                 _______ , _______   , _______  , _______ ,     _______ , _______ , _______  , _______
 ),
@@ -137,10 +146,9 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LT(SPECIALS, KC_SPC):
         case LCTL_T(KC_TAB):
         case LSFT_T(KC_ESC):
-        case RGUI_T(KC_ENT):
+        case LT(SPECIALS, KC_SPC):
             return true;
         default:
             return false;
