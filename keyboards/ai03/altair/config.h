@@ -13,6 +13,7 @@
 
 /* Tapping settings */
 #define DYNAMIC_TAPPING_TERM_INCREMENT 5
+#define COMBO_TERM 25
 #define TAPPING_TERM 200
 #define TAPPING_TERM_PER_KEY
 #define QUICK_TAP_TERM 100

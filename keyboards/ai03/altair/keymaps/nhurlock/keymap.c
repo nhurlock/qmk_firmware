@@ -14,11 +14,26 @@
 
 const uint16_t PROGMEM tab_combo[] = {KC_J, KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM bspc_combo[] = {KC_M, KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM lalt_combo[] = {KC_S, KC_D, KC_F, COMBO_END};
+
+const uint16_t PROGMEM lalt_combo[] = {KC_S, KC_W, COMBO_END};
+const uint16_t PROGMEM lctl_combo[] = {KC_D, KC_E, COMBO_END};
+const uint16_t PROGMEM lgui_combo[] = {KC_F, KC_R, COMBO_END};
+
+const uint16_t PROGMEM ralt_combo[] = {KC_L, KC_O, COMBO_END};
+const uint16_t PROGMEM rctl_combo[] = {KC_K, KC_I, COMBO_END};
+const uint16_t PROGMEM rgui_combo[] = {KC_J, KC_U, COMBO_END};
+
 combo_t key_combos[] = {
     COMBO(tab_combo, KC_TAB),
     COMBO(bspc_combo, KC_BSPC),
+
     COMBO(lalt_combo, KC_LALT),
+    COMBO(lctl_combo, KC_LCTL),
+    COMBO(lgui_combo, KC_LGUI),
+
+    COMBO(ralt_combo, KC_RALT),
+    COMBO(rctl_combo, KC_RCTL),
+    COMBO(rgui_combo, KC_RGUI),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
