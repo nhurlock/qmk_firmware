@@ -14,6 +14,7 @@
 
 const uint16_t PROGMEM tab_combo[] = {KC_J, KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM bspc_combo[] = {KC_M, KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM fn_combo[] = {KC_A, LT(NUMPAD, KC_BSPC), COMBO_END};
 
 const uint16_t PROGMEM lalt_combo[] = {KC_S, KC_W, COMBO_END};
 const uint16_t PROGMEM lctl_combo[] = {KC_D, KC_E, COMBO_END};
@@ -26,6 +27,7 @@ const uint16_t PROGMEM rgui_combo[] = {KC_J, KC_U, COMBO_END};
 combo_t key_combos[] = {
     COMBO(tab_combo, KC_TAB),
     COMBO(bspc_combo, KC_BSPC),
+    COMBO(fn_combo, MO(FN)),
 
     COMBO(lalt_combo, KC_LALT),
     COMBO(lctl_combo, KC_LCTL),
